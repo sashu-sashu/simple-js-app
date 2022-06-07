@@ -1,4 +1,6 @@
-let pokemonList=[
+let pokemonRepository = (function () {
+
+let pokemonList = [
     {name: "Misdreavus", 
     height: 2, 
     type: ["ghost"]
@@ -18,20 +20,33 @@ let pokemonList=[
     height: 3, 
     type: ["grass","poison"]
     }
-    ];
+    ]
 
 
-///for loop function
-///for (let i = 0; i < pokemonList.length; i++) {
-    ///if (pokemonList[i].height > 1 && pokemonList[i].height <3) { //code to highlight special Pokemon
-        ///document.write(pokemonList[i].name + " " + "(height: "+ pokemonList[i].height + ") Here is an average one!" + "<br />");
-    ///} else {
-        ///document.write(pokemonList[i].name + " " + "(height: "+ pokemonList[i].height +") <br />");
-      ///}
-    ///}
 
-///forEach function
+    function getAll () {
+        return pokemonList;
+    }
+    
+    function add (pokemon) {
+        pokemonList.push(pokemon);
+    }
+    
+    return {
+        add: function(pokemon) {
+          pokemonList.push(pokemon);
+        },
+        getAll: function() {
+          return pokemonList;
+        }
+    };
+}) ()
 
-pokemonList.forEach(function(pokemon){
+console.log(pokemonRepository.getAll());
+pokemonRepository.add({ name: "Pikachu", height:10, type: "electric"});
+console.log(pokemonRepository.getAll());
+
+///updated cod forEach function (IIFE)
+pokemonRepository.getAll().forEach(function (pokemon){
     document.write(pokemon.name + ": " + pokemon.type + "; " + pokemon.height + "<br />");
   });
