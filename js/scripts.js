@@ -32,6 +32,6 @@ let pokemonList=[
 
 ///forEach function
 
-    pokemonList.forEach(function(pokemon){
+pokemonList.forEach(function(pokemon){
     document.write(pokemon.name + ": " + pokemon.type + "; " + pokemon.height + "<br />");
   });
