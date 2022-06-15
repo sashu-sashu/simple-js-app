@@ -22,25 +22,53 @@ let pokemonList = [
     }
     ]
 
+///key-values pairs returned
 
-
-    function getAll () {
-        return pokemonList;
-    }
-    
-    function add (pokemon) {
+    function add(pokemon) {
         pokemonList.push(pokemon);
-    }
+      }
     
-    return {
-        add: function(pokemon) {
-          pokemonList.push(pokemon);
-        },
-        getAll: function() {
-          return pokemonList;
-        }
-    };
-}) ()
+      function getAll() {
+        return pokemonList;
+      }
+
+//shows details of any picked pokemon     
+    function showDetails(pokemon) {
+        console.log(pokemon);
+    } 
+     
+/// adds event listener to element
+
+    function addListener (htmlElement, pokemon) {
+        htmlElement.addEventListener('click', function () {
+            showDetails(pokemon);
+       })
+    }
+
+    addListener(document.querySelector('h1'), 'it is a missing')
+
+
+    function addListItem(pokemon){
+        let pokemonList = document.querySelector(".pokemon-list");
+        let listpokemon = document.createElement("li");
+        let button = document.createElement("button");
+        button.innerText = pokemon.name;
+        /*button.addEventListener('click', function (event) {
+            showDetails(pokemon)
+        });*/
+        addListener(button, pokemon);
+        button.classList.add("button-class");
+        listpokemon.appendChild(button);
+        pokemonList.appendChild(listpokemon);
+      }  
+
+    
+      return {
+        add: add,
+        getAll: getAll,
+        addListItem: addListItem
+      };
+})();
 
 console.log(pokemonRepository.getAll());
 pokemonRepository.add({ name: "Pikachu", height:10, type: "electric"});
@@ -48,5 +76,7 @@ console.log(pokemonRepository.getAll());
 
 ///updated cod forEach function (IIFE)
 pokemonRepository.getAll().forEach(function (pokemon){
-    document.write(pokemon.name + ": " + pokemon.type + "; " + pokemon.height + "<br />");
+    pokemonRepository.addListItem(pokemon);
   });
+
+  
