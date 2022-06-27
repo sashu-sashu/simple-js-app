@@ -12,11 +12,6 @@ let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150"
       function getAll() {
         return pokemonList;
       }
-
-//shows details of any picked pokemon     
-    function showDetails(pokemon) {
-        console.log(pokemon);
-    } 
      
 /// adds event listener to element
 
@@ -37,7 +32,7 @@ let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150"
         /*button.addEventListener('click', function (event) {
             showDetails(pokemon)
         });*/
-        addListener(button, pokemon);
+        //addListener(button, pokemon);
         button.classList.add("button-class");
         listpokemon.appendChild(button);
         pokemonList.appendChild(listpokemon);
