@@ -5,6 +5,31 @@ let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150"
 
 let modalContainer = document.querySelector('#modal-container');
 
+//search function
+let search = document.getElementById("pokemon-search");
+  search.addEventListener("input", searchList);
+
+  function searchList() {
+    let searchInput = document.getElementById("pokemon-search").value;
+    searchInput = searchInput.toLowerCase();
+    let listItem = $("li");
+    listItem.each(function () {
+      let item = $(this);
+      let name = item.text();
+      if (name.includes(searchInput)) {
+        item.show();
+      } else {
+        item.hide();
+      }
+    });
+  }
+
+  function showDetails(pokemon) {
+    loadDetails(pokemon).then(function () {
+      showModal(pokemon);
+    });
+  }
+
 ///key-values pairs returned
 
     function add(pokemon) {

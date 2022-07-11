@@ -1,7 +1,8 @@
 html, 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Helvetica, sans-serif;
 }
+
 
 .pokemon-list {
   display: flex;
@@ -16,15 +17,18 @@ body {
 .pokemon-list li {
   width: 100px;
   text-align: center;
-  margin: 10px;
-}
-.pokemon-list button {
-  width: 110px;
-  padding: 10px;
-  display: inline-block;
+  margin: 15px;
 }
 
-.button-class { 
+.pokemon-list button {
+  width: 120px;
+  padding: 10px;
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+
+.btn { 
   background-color: blue;
   border: none;
   color: white;
@@ -37,8 +41,8 @@ body {
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   cursor: pointer;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   color: black;
-  border: 2px solid blue;
+  border: 3px solid rgb(140, 174, 255);
 }
 
