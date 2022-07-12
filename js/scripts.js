@@ -42,7 +42,8 @@ const pokemonRepository = (function () {
     buttonItem.innerText = pokemon.name;
     buttonItem.classList.add('pokemon-button');
     buttonItem.setAttribute('data-toggle', 'modal');
-    buttonItem.setAttribute('data-target', '.modal');
+    // this attribute should select ONLY pokemon-modal
+    buttonItem.setAttribute('data-target', '#pokemon-modal');
     $(buttonItem).addClass('button-class btn-block btn m1');
     pokemonItem.appendChild(buttonItem);
     pokemonList.appendChild(pokemonItem);
@@ -85,7 +86,6 @@ const pokemonRepository = (function () {
       item.abilities = details.abilities.map((ability) => ability.ability.name).join(',');
       item.weight = details.weight;
 
-      console.log(details);
     }).catch((e) => {
       loadingMessageHidden(true);
       console.error(e);
@@ -108,29 +108,15 @@ const pokemonRepository = (function () {
 
   // jQ code to implement Modal
   function showModal(pokemon) {
-    const modalBody = $('.modal-body');
-    const modalTitle = $('.modal-title');
+    console.log('here')
+    // $('#pokemon-modal .modal-body');
+    $('#pokemon-modal .modal-title').text(pokemon.name);
+    $('#pokemon-modal .modal-img.front').attr('src', pokemon.imageUrlFront).attr('witdh', '50%');
+    $('#pokemon-modal .modal-img.back').attr('src', pokemon.imageUrlBack).attr('witdh', '50%');
+    $('#pokemon-modal .height').text(`height : ${pokemon.height}`);
+    $('#pokemon-modal .weight').text(`weight : ${pokemon.weight}`);
+    $('#pokemon-modal .types').text(`types : ${pokemon.types}`);
     //const modalHeader = $('.modal-header');
-    modalTitle.empty();
-    modalBody.empty();
-
-    const nameElement = $(`<h5>${pokemon.name}</h5>`);
-    const imageElementFront = $('<img class="modal-img" style="width:50%">');
-    imageElementFront.attr('src', pokemon.imageUrlFront);
-    const imageElementBack = $('<img class="modal-img" style="width:50%">');
-    imageElementBack.attr('src', pokemon.imageUrlBack);
-    const heightElement = $('<p>' + `height : ${pokemon.height}</p>`);
-    const weightElement = $('<p>' + `weight : ${pokemon.weight}</p>`);
-    const abilitiesElement = $('<p>' + `abilities : ${pokemon.abilities}</p>`);
-    const typesElement = $('<p>' + `types : ${pokemon.types}</p>`);
-
-    modalTitle.append(nameElement);
-    modalBody.append(imageElementFront);
-    modalBody.append(imageElementBack);
-    modalBody.append(heightElement);
-    modalBody.append(weightElement);
-    modalBody.append(typesElement);
-    modalBody.append(abilitiesElement);
   }
 
   return {
