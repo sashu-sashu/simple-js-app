@@ -87,8 +87,7 @@ fieldset[disabled] .btn-custom.active {
 }
 
 .modal {
-  position: fixed;
-  margin-top: 80px;
+  position: absolute;
 }
 
 
@@ -120,9 +119,8 @@ fieldset[disabled] .btn-custom.active {
 }
 
 #pokemon-modal .modal-body li {
-  width: 50%;
-  display: flex;
-  height: 180px;
+  width: 96px;
+  height: 96px;
 }
 
 #pokemon-modal img {
