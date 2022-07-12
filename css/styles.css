@@ -1,6 +1,25 @@
-html, 
+html,
+
+html {
+  font-size: 1rem;
+}
+
+
 body {
   font-family: Helvetica, sans-serif;
+  color: #007bff;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.navbar-brand {
+  font-family: Helvetica, sans-serif;
+  font-size: 24px;
+  font-style: bold;
+}
+
+.page-container {
+  margin-top: 80px;
 }
 
 
@@ -42,7 +61,50 @@ body {
   transition-duration: 0.4s;
   cursor: pointer;
   background-color: rgb(255, 255, 255);
-  color: black;
-  border: 3px solid rgb(140, 174, 255);
+  color: #007bff;
+  border: 2px solid #007bff;
 }
+
+.btn-custom.disabled,
+.btn-custom[disabled],
+fieldset[disabled] .btn-custom,
+.btn-custom.disabled:hover,
+.btn-custom[disabled]:hover,
+fieldset[disabled] .btn-custom:hover,
+.btn-custom.disabled:focus,
+.btn-custom[disabled]:focus,
+fieldset[disabled] .btn-custom:focus,
+.btn-custom.disabled:active,
+.btn-custom[disabled]:active,
+fieldset[disabled] .btn-custom:active,
+.btn-custom.disabled.active,
+.btn-custom[disabled].active,
+fieldset[disabled] .btn-custom.active {
+  background-color: rgb(255, 255, 255);
+  border-color: none;
+}
+
+
+.modal-content {
+  background-color: #f1d7ff;
+  text-align: left;
+}
+
+.close {
+  color:white;
+}
+
+.close:hover {
+   opacity: 0.3;
+}
+
+
+#pokemon-modal .modal-body {
+  line-height: 10px;
+}
+
+#about-modal .modal-body {
+  line-height: 30px;
+}
+
 
