@@ -108,7 +108,6 @@ const pokemonRepository = (function () {
 
   // jQ code to implement Modal
   function showModal(pokemon) {
-    console.log('here')
     // $('#pokemon-modal .modal-body');
     $('#pokemon-modal .modal-title').text(pokemon.name);
     $('#pokemon-modal .modal-img.front').attr('src', pokemon.imageUrlFront);

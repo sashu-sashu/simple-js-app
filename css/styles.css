@@ -86,11 +86,6 @@ fieldset[disabled] .btn-custom.active {
   border-color: none;
 }
 
-.modal {
-  position: fixed;
-  margin-top: 80px;
-}
-
 
 .modal-content {
   background-color: #f1d7ff;
